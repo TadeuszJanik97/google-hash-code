@@ -1,4 +1,3 @@
-package googlehash;
 
 import java.util.HashMap;
 
