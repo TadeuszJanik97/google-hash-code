@@ -29,6 +29,7 @@ public class Endpoint {
     public int getLatency (){
         return d_latency;
     }
+
     public static int getAmount (){
 
     }

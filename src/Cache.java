@@ -5,8 +5,8 @@ public class Cache {
     
     public int id;
     public int capacity;
-    public EndPoint[] endpoints;
-    public HashMap<EndPoint,Integer> endpoints_latency;
+    public Endpoint[] endpoints;
+    public HashMap<Endpoint,Integer> endpoints_latency;
 
     public Cache(int id, int capacity) {
         this.id = id;
@@ -20,7 +20,7 @@ public class Cache {
         int delta = 0;
   
         for (int i=0;i<n;i++) {
-            EndPoint e = endpoints[i];
+            Endpoint e = endpoints[i];
             if (e.hasVideo(video)) {
                 int requests = e.getAmount(video);
                 delta += requests*(this.endpoints_latency.get(e)-e.d_latency);
