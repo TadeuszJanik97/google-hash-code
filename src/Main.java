@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 /**
@@ -18,10 +19,17 @@ public class Main {
             requests = scanner.nextInt();
             caches = scanner.nextInt();
             cacheSize = scanner.nextInt();
+            ArrayList<>
             ArrayList<Video> videos = new ArrayList<>();
+            Cache[] cachesArray = new Cache[caches];
+
+            for(int i=0; i<caches; i++){
+                cachesArray[i] = new Cache(i, cacheSize);
+            }
             for (int i = 0; i < videosNumber; i++) {
                 int videoSize = scanner.nextInt();
-                Video video = new Video();
+                Video video = new Video(i, videoSize);
+                videos.add(video);
             }
             for(int i=0; i<endpointsNumber; i++){
                 int databaseLatency = scanner.nextInt();
@@ -32,6 +40,11 @@ public class Main {
                     int latency = scanner.nextInt();
                 }
                 Endpoint endpoint = new Endpoint(i, databaseLatency);
+            }
+            for(int i=0; i<requests; i++){
+                int videoID = scanner.nextInt();
+                int endpointID = scanner.nextInt();
+                int amount = scanner.nextInt();
             }
 
         } catch(Exception e){
