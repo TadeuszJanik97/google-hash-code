@@ -9,6 +9,29 @@ import java.util.Scanner;
  */
 public class Main {
 
+
+
+    public Video[] get
+
+    public Cache biggestDeltaCache(Cache[] caches, Video[] videos) {
+
+        int c = caches.length;
+        int v = videos.length; 
+        for (int i=0;i<n;i++) {
+            int capacity = caches[i].capacity;
+            float[] deltas = new float[v];
+            float index = 0;
+            for (int j=0;j<v;j++) {
+                deltas[i] = cache[i].video_delta(videos[j]);
+            }
+            int used = 0;
+            while (used <= capacity) {
+                
+            }
+        }
+
+    }
+
     public static void main(String[] args){
         File file = new File("src/kittens.in");
         try {
