@@ -8,10 +8,10 @@ public class Endpoint {
     private ArrayList<Integer> requests;
     private HashMap<Video, Integer> hash_map;
 
-    public Endpoint (int ID, int d_latency, ArrayList<Video> videos, ArrayList<Integer> requests){
+    public Endpoint (int ID, int d_latency){
         this.ID = ID;
         this.d_latency = d_latency;
-        hash_map = createHashMap(videos, requests);
+        //hash_map = createHashMap(videos, requests);
     }
 
     private HashMap<Video, Integer> createHashMap(ArrayList<Video> videos, ArrayList<Integer> requests){
@@ -27,7 +27,7 @@ public class Endpoint {
 
     public int getLatency (){ return d_latency;}
 
-    public static boolean hasVideo (){ return this.hash_map.isEmpty();}
+    public boolean hasVideo (){ return this.hash_map.isEmpty();}
 
-    public static int getAmount (Video video){ return this.hash_map.get(video);}
+    public int getAmount (Video video){ return this.hash_map.get(video);}
 }

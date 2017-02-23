@@ -22,7 +22,7 @@ public class Main {
             float[] deltas = new float[v];
             float index = 0;
             for (int j=0;j<v;j++) {
-                deltas[i] = cache[i].video_delta(videos[j]);
+                deltas[i] = caches[i].video_delta(videos[j]);
             }
             int used = 0;
             while (used <= capacity) {
@@ -42,10 +42,10 @@ public class Main {
             requests = scanner.nextInt();
             caches = scanner.nextInt();
             cacheSize = scanner.nextInt();
-            ArrayList<>
-            ArrayList<Video> videos = new ArrayList<>();
+            ArrayList<Video> videos = new ArrayList();
+            ArrayList<String> requestSaved = new ArrayList();
             Cache[] cachesArray = new Cache[caches];
-
+            ArrayList<Endpoint> endpointSaved = new ArrayList();
             for(int i=0; i<caches; i++){
                 cachesArray[i] = new Cache(i, cacheSize);
             }
@@ -57,17 +57,24 @@ public class Main {
             for(int i=0; i<endpointsNumber; i++){
                 int databaseLatency = scanner.nextInt();
                 int connectedCaches = scanner.nextInt();
+                endpointSaved.add(new Endpoint(i, databaseLatency));
                 HashMap<Endpoint, Integer> cacheLatencies = new HashMap<>();
                 for(int j=0; j<connectedCaches; j++){
                     int cacheID = scanner.nextInt();
                     int latency = scanner.nextInt();
+                    cache
                 }
-                Endpoint endpoint = new Endpoint(i, databaseLatency);
             }
             for(int i=0; i<requests; i++){
                 int videoID = scanner.nextInt();
                 int endpointID = scanner.nextInt();
                 int amount = scanner.nextInt();
+                requestSaved.add(Integer.toString(videoID) + " " + endpointID + " " + amount);
+            }
+
+            for(int i=0; i<endpointsNumber; i++){
+
+
             }
 
         } catch(Exception e){

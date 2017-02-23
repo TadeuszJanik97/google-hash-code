@@ -21,9 +21,9 @@ public class Cache {
   
         for (int i=0;i<n;i++) {
             Endpoint e = endpoints[i];
-            if (e.hasVideo(video)) {
+            if (e.hasVideo()) {
                 int requests = e.getAmount(video);
-                delta += requests*(this.endpoints_latency.get(e)-e.d_latency);
+                delta += requests*(this.endpoints_latency.get(e)-e.getLatency());
             }
         }
         
