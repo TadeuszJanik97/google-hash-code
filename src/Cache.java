@@ -7,6 +7,11 @@ public class Cache {
     public int capacity;
     public EndPoint[] endpoints;
     public HashMap<EndPoint,Integer> endpoints_latency;
+
+    public Cache(int id, int capacity) {
+        this.id = id;
+        this.capacity = capacity;
+    }
     
     // Calculating delta for a specific video
     public float video_delta(Video video) {
